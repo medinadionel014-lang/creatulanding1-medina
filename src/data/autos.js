@@ -24,3 +24,13 @@ export const autos = [
     descripcion: "Diseño moderno"
   }
 ];
+
+// 🔥 AGREGA ESTO ↓↓↓
+
+export const getAutos = () =>
+  new Promise(resolve => setTimeout(() => resolve(autos), 800));
+
+export const getAutoById = (id) =>
+  new Promise(resolve =>
+    setTimeout(() => resolve(autos.find(a => a.id === Number(id))), 800)
+  );
