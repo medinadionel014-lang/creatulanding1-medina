@@ -4,7 +4,7 @@ export const autos = [
     nombre: "Toyota Corolla",
     categoria: "sedan",
     precio: 20000,
-    img: "https://via.placeholder.com/300",
+    img: "https://picsum.photos/400/250?random=1",
     descripcion: "Sedán confiable y económico"
   },
   {
@@ -12,7 +12,7 @@ export const autos = [
     nombre: "Ford Ranger",
     categoria: "pickup",
     precio: 35000,
-    img: "https://via.placeholder.com/300",
+    img: "https://picsum.photos/400/250?random=2",
     descripcion: "Potencia y versatilidad para trabajo y ruta"
   },
   {
@@ -20,7 +20,7 @@ export const autos = [
     nombre: "Honda Civic",
     categoria: "sedan",
     precio: 25000,
-    img: "https://via.placeholder.com/300",
+    img: "https://picsum.photos/400/250?random=3",
     descripcion: "Diseño moderno y excelente rendimiento"
   }
 ];
