@@ -1,17 +1,83 @@
 import { useEffect, useState } from "react";
+
 import { useParams } from "react-router-dom";
-import { getAutoById } from "../data/autos";
+
+import {
+  doc,
+  getDoc
+} from "firebase/firestore";
+
+import { db } from "../firebase/config";
+
 import ItemDetail from "./ItemDetail";
 
 function ItemDetailContainer() {
+
   const [auto, setAuto] = useState(null);
-  const { itemId } = useParams();
+
+  const { id } = useParams();
 
   useEffect(() => {
-    getAutoById(itemId).then(setAuto);
-  }, [itemId]);
 
-  return auto ? <ItemDetail auto={auto} /> : <p>Cargando...</p>;
+    const docRef = doc(
+      db,
+      "products",
+      id
+    );
+
+    getDoc(docRef)
+
+      .then((snapshot) => {
+
+        if (
+          snapshot.exists()
+        ) {
+
+          setAuto({
+
+            id:
+            snapshot.id,
+
+            ...snapshot.data()
+
+          });
+
+        }
+
+      })
+
+      .catch((error) => {
+
+        console.log(
+          error
+        );
+
+      });
+
+  }, [id]);
+
+  if (!auto) {
+
+    return (
+
+      <h2>
+
+        Cargando...
+
+      </h2>
+
+    );
+
+  }
+
+  return (
+
+    <ItemDetail
+      auto={auto}
+    />
+
+  );
+
 }
 
 export default ItemDetailContainer;

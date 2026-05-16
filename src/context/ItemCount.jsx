@@ -1,63 +1,37 @@
 import { useState } from "react";
 
-function ItemCount({ stock, onAdd }) {
-
+const ItemCount = ({ stock, onAdd }) => {
   const [cantidad, setCantidad] = useState(1);
 
   const sumar = () => {
-
     if (cantidad < stock) {
-
       setCantidad(cantidad + 1);
-
     }
-
   };
 
   const restar = () => {
-
     if (cantidad > 1) {
-
       setCantidad(cantidad - 1);
-
     }
-
   };
 
-  if (stock === 0) {
-
-    return <h3>Producto sin stock</h3>;
-
-  }
-
   return (
-
     <div>
-
-      <button onClick={restar}>
-        -
-      </button>
+      <button onClick={restar}>-</button>
 
       <span style={{ margin: "10px" }}>
         {cantidad}
       </span>
 
-      <button onClick={sumar}>
-        +
-      </button>
+      <button onClick={sumar}>+</button>
 
-      <br />
-      <br />
+      <br /><br />
 
-      <button
-        onClick={() => onAdd(cantidad)}
-      >
+      <button onClick={() => onAdd(cantidad)}>
         Agregar al carrito
       </button>
-
     </div>
-
   );
-}
+};
 
 export default ItemCount;
