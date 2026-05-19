@@ -5,7 +5,7 @@ export const autos = [
     categoria: "sedan",
     precio: 20000,
     stock: 5,
-    img: "/creatulanding1-medina/img/corolla.jpg",
+    img: "/img/corolla.jpg",
     descripcion: "Sedán confiable y económico"
   },
   {
@@ -14,7 +14,7 @@ export const autos = [
     categoria: "pickup",
     precio: 35000,
     stock: 3,
-    img: "/creatulanding1-medina/img/ranger.jpg",
+    img: "/img/ranger.jpg",
     descripcion: "Potencia y versatilidad"
   },
   {
@@ -23,22 +23,7 @@ export const autos = [
     categoria: "sedan",
     precio: 25000,
     stock: 8,
-    img: "/creatulanding1-medina/img/civic.jpg",
+    img: "/img/civic.jpg",
     descripcion: "Diseño moderno"
   }
 ];
-
-export const getAutos = () =>
-  new Promise(resolve =>
-    setTimeout(() => resolve(autos), 800)
-  );
-
-export const getAutoById = (id) =>
-  new Promise(resolve =>
-    setTimeout(
-      () => resolve(
-        autos.find(a => a.id === Number(id))
-      ),
-      800
-    )
-  );
