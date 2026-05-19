@@ -1,13 +1,6 @@
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
-import Cart from "./components/Cart";
-
 function App() {
   return (
-    <BrowserRouter basename="/creatulanding1-medina">
+    <BrowserRouter>
       <NavBar />
 
       <Routes>
@@ -28,5 +21,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
