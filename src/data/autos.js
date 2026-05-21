@@ -5,7 +5,7 @@ export const autos = [
     categoria: "sedan",
     precio: 20000,
     stock: 5,
-    img: "/img/corolla.jpg",
+    img: "/img/corolla.jpg", // Texto directo, apunta a public/img/corolla.jpg
     descripcion: "Sedán confiable y económico"
   },
   {
